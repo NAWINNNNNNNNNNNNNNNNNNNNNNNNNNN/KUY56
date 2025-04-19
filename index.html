@@ -226,6 +226,111 @@
       margin-top: 5px;
     }
     
+    /* ส่วนแกลลอรี่ภาพ */
+    .gallery-section {
+      max-width: 1400px;
+      margin: 60px auto;
+      padding: 0 20px;
+      overflow: hidden;
+    }
+    
+    .gallery-title {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+      text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+    }
+    
+    .gallery-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--accent-color);
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+    }
+    
+    .gallery-container {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      margin: 30px auto;
+    }
+    
+    .gallery-track {
+      display: flex;
+      height: 100%;
+      gap: 20px;
+      animation: scroll 30s linear infinite;
+      will-change: transform;
+    }
+    
+    .gallery-item {
+      flex: 0 0 300px;
+      height: 100%;
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      border: 2px solid rgba(139, 92, 246, 0.3);
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+      border-color: var(--accent-color);
+    }
+    
+    .gallery-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .gallery-item:hover .gallery-img {
+      transform: scale(1.1);
+    }
+    
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+      color: white;
+      padding: 20px 15px 10px;
+      text-align: left;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+    }
+    
+    .gallery-caption h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: var(--accent-color);
+    }
+    
+    .gallery-caption p {
+      margin: 5px 0 0;
+      font-size: 0.9rem;
+    }
+    
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-300px * 6 - 20px * 6)); }
+    }
+    
     /* ส่วนวิดีโอ */
     .video-section {
       max-width: 1200px;
@@ -382,6 +487,22 @@
         gap: 20px;
       }
       
+      .gallery-section {
+        margin: 40px auto;
+      }
+      
+      .gallery-title {
+        font-size: 1.6rem;
+      }
+      
+      .gallery-container {
+        height: 250px;
+      }
+      
+      .gallery-item {
+        flex: 0 0 220px;
+      }
+      
       .video-section {
         margin: 40px auto;
       }
@@ -489,6 +610,37 @@
     </div>
   </div>
 
+  <!-- ส่วนแกลลอรี่ภาพ -->
+  <div class="gallery-section">
+    <h2 class="gallery-title">ผลงานการเสกในประเทศ</h2>
+    <div class="gallery-container">
+      <div class="gallery-track">
+        <div class="gallery-item">
+          <img src="https://media.discordapp.net/attachments/1230824496445784077/1363150471828603161/image.png?ex=6804fc4e&is=6803aace&hm=b7620a6cb5f5280dad1deede06550b06cb641657bdfb9193854c9ad7b28c03ae&=&format=webp&quality=lossless" alt="ผลงาน 1" class="gallery-img">
+          <div class="gallery-caption">
+            <h3>SKYCITY</h3>
+            <p>ตัวอย่างผลงานการเสกในประเทศ</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://media.discordapp.net/attachments/1230824496445784077/1363150230224240680/image.png?ex=6804fc14&is=6803aa94&hm=d4d954e4d7998ea147098b4e25062d6b9cf3ea1b7d9a8e6fb25394ddc48aa8a8&=&format=webp&quality=lossless" alt="ผลงาน 2" class="gallery-img">
+          <div class="gallery-caption">
+            <h3>SOUL CITY</h3>
+            <p>ตัวอย่างผลงานการเสกในประเทศ</p>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://media.discordapp.net/attachments/1230824496445784077/1363150062729035846/image.png?ex=6804fbed&is=6803aa6d&hm=7048c317f69cd1e76e3dab2d4e520a55bb98f2384c79a2aaab3be1eb0de88160&=&format=webp&quality=lossless" alt="ผลงาน 3" class="gallery-img">
+          <div class="gallery-caption">
+            <h3>CLOUD city</h3>
+            <p>ตัวอย่างผลงานการเสกในประเทศ</p>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+
   <!-- ส่วนวิดีโอ -->
   <div class="video-section">
     <h2 class="video-title">ผลงาน</h2>
@@ -508,6 +660,7 @@
   <!-- ส่วนติดต่อ -->
   <div class="contact-section">
     <h3 class="contact-title">สนใจใช้บริการรับเสก</h3>
+    <h3 class="contact-title">ซื่อ โปรแกรมเสก 2K ไม่ลด เอาไปต่อยอดได้มากมาย</h3>
     <p class="contact-description">ติดต่อเราได้ที่ช่องทางด้านล่างนี้</p>
     <div class="button-group">
       <a href="https://discord.gg/aNVmr3EHZG" class="discord-link" target="_blank">
@@ -568,6 +721,16 @@
         this.style.setProperty('--mouse-x', `${x}px`);
         this.style.setProperty('--mouse-y', `${y}px`);
       });
+    });
+
+    // เอฟเฟกต์แกลลอรี่เลื่อนอัตโนมัติ
+    const galleryTrack = document.querySelector('.gallery-track');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    // ทำซ้ำรายการเพื่อให้เลื่อนต่อเนื่องได้
+    galleryItems.forEach(item => {
+      const clone = item.cloneNode(true);
+      galleryTrack.appendChild(clone);
     });
   </script>
 </body>
